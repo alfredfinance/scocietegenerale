@@ -40,7 +40,7 @@ options.add_argument("--window-size=1920,1080")
 driver = webdriver.Chrome(options=options)
 
 base_url = "https://careers.societegenerale.com/en/search?refinementList[jobLocation][0]=AUS_A01&refinementList[jobLocation][1]=BEL_A01&refinementList[jobLocation][2]=CHN_A07&refinementList[jobLocation][3]=CHN_A11&refinementList[jobLocation][4]=ESP_A02&refinementList[jobLocation][5]=FRA_A20_D001_L001&refinementList[jobLocation][6]=FRA_A20_D005_L025&refinementList[jobLocation][7]=FRA_A23_D004&refinementList[jobLocation][8]=GBR_A01&refinementList[jobLocation][9]=GER_A08_D003&refinementList[jobLocation][10]=HKG_A01&refinementList[jobLocation][11]=IND_A37&refinementList[jobLocation][12]=KOR_A01&refinementList[jobLocation][13]=LUX_A01&refinementList[jobLocation][14]=NLD_A01&refinementList[jobLocation][15]=POL_A01&refinementList[jobLocation][16]=USA_A07_D001&refinementList[jobFunction][0]=PF251&refinementList[jobFunction][1]=UW387&refinementList[jobFunction][2]=ZX468&refinementList[jobFunction][3]=KJ697&refinementList[jobFunction][4]=NP922&refinementList[jobFunction][5]=DF734&refinementList[jobFunction][6]=IM205&refinementList[jobFunction][7]=SU264&refinementList[jobFunction][8]=ET461"
-max_pages = 1
+max_pages = 50
 job_urls = []
 
 wait_time = random.uniform(5, 10)
