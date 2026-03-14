@@ -125,7 +125,9 @@ for job_url in job_urls:
             return "" if not multiple else []
 
 
-    description = get_text('div.lg\\:col-span-2')
+    sections_text = get_text('[id^="job-detail"]', multiple=True)
+    description = "\n".join(sections_text)
+    
     division = get_text('div.inline-flex.border')
     
     location = get_text('div.mask-location-check')
