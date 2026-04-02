@@ -23,7 +23,7 @@ from enum import Enum
 from typing import List, Optional, Any
 from google.cloud import bigquery
 from google.oauth2 import service_account
-
+from zoneinfo import ZoneInfo
 
 
 # Set up Selenium options (headless mode for efficiency)
@@ -134,10 +134,13 @@ for job_url in job_urls:
     location = location.split(",")[0].strip()
     
     #experienceLevel = get_text('div[data-testid="opportunity-field-corporateTitle"] span.gs-text:last-child')
-    scrappedDateTime = datetime.datetime.now().isoformat()
-    scrappedDate = datetime.datetime.now().strftime("%Y-%m-%d")
-    scrappedHour = datetime.datetime.now().strftime("%H")
-    scrappedMinutes = datetime.datetime.now().strftime("%M")
+
+    paris_now = datetime.datetime.now(ZoneInfo("Europe/Paris"))
+    scrappedDateTime    = paris_now.isoformat()
+    scrappedDate        = paris_now.strftime("%Y-%m-%d")
+    scrappedHour        = paris_now.strftime("%H")
+    scrappedMinutes     = paris_now.strftime("%M")
+    
     title = driver.find_element(By.CSS_SELECTOR, 'h1').text.strip()
 
     contract = get_text("div.bg-pink-800 span")
